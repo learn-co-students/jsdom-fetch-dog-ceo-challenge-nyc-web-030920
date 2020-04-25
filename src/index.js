@@ -4,7 +4,7 @@ const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
 let breeds = []
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchBreeds()
-  // loadImages()
+  loadImages()
   addBreedSelectListener()
   
 })
