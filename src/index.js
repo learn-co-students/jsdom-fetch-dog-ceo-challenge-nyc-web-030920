@@ -116,21 +116,6 @@ const optionA = dropDownMenu.firstElementChild
 
 optionA.insertAdjacentElement('beforebegin', mainOption)
 
-// let originalChildren = (dogsUl.childNodes).splice()
-console.dir(dogsUl)
-const ulCopy = dogsUl.childNodes
-console.log(ulCopy)
-console.log(dogsUl.children)
-
-function duplicate(arr) {
-  let copy = []
-  for(const ele of arr) {
-    copy.push(ele)
-  }
-  return copy
-}
-
-const originalUl = duplicate(ulCopy)
 
 dropDownMenu.addEventListener('change', (event) => {
   let option = event.target.value
