@@ -1,7 +1,13 @@
 console.log('%c HI', 'color: firebrick')
-
 const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
-let breeds = []
+
+//
+
+let breeds
+// makes breeds global so i don't have pass it in as argument 
+
+//
+
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchBreeds()
   loadImages()
@@ -26,6 +32,12 @@ function addImage (img) {
     <p><img src="${img}"></p>
   </ul>`
 }
+
+
+///////////////
+// breeds
+//////////////
+
 
 // fetch 
 function fetchBreeds() {
@@ -80,20 +92,21 @@ function addBreedSelectListener() {
 // set style="display:none"
 /////////////////////
 
-function filterBreeds(letter, list){
-  console.log(letter);
-  Array.from(list.children).forEach(li => {
-      // console.log(li.dataset.breed);
-      if(li.dataset.breed[0] === letter){
-          console.log(li.dataset.breed);
-          li.style.display = “list-item”;
-      }
-      else{
-          li.style.display = “none”;
-      }
-  })
-}
+{/* 
+  function filterBreeds(letter, list){
+    console.log(letter);
+    Array.from(list.children).forEach(li => {
+        // console.log(li.dataset.breed);
+        if(li.dataset.breed[0] === letter){
+            console.log(li.dataset.breed);
+            li.style.display = “list-item”;
+        }
+        else{
+            li.style.display = “none”;
+        }
+    })
+  }
+*/}
 
-// test test 
 
 
