@@ -45,7 +45,7 @@ function loadAllDogs() {
 }
 
 function addBreed(breed) {
-    // add all breeds to UL
+    // add individual breed to UL
     const ul = document.querySelector('#dog-breeds')
     let li = document.createElement('li')
     li.innerText = breed
