@@ -10,9 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 })
 
 function loadImage() {
-    // fetch(imgUrl)
-    //     .then(response => response.json())
-    //     .then(animals => {createNew(animals)})  // testing out just sending json
+    // fetch images
     const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
     fetch(imgUrl)
         .then(response => response.json())
@@ -22,8 +20,7 @@ function loadImage() {
 
 
 function createNewImg(imageUrl) {
-    // console.log(imageUrl)
-    // json.message.forEach(eachHash => console.log(eachHash))
+    // add image to div
     let dogContainer = document.querySelector('#dog-image-container')
     let dogImage = document.createElement('img')
     dogImage.src = imageUrl
