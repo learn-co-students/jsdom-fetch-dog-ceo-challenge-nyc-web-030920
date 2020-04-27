@@ -2,7 +2,7 @@ console.log('%c HI', 'color: firebrick')
 let breedKeys 
 
 document.addEventListener("DOMContentLoaded", function(){
-    // loadDogImages();
+    loadDogImages();
     loadDogBreeds();
     addListenerToDogs();
 })
@@ -25,7 +25,7 @@ function addImage(dogUrl) {
     let image = document.createElement('img');
     image.src = dogUrl;
     container.appendChild(image);
-  }
+}
   
 
 function loadDogBreeds(){
