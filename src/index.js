@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", function(){
     addListenerToDogs();
 })
 
+function addImage(dogUrl) {
+    const container = document.getElementById('dog-image-container');
+    let image = document.createElement('img');
+    image.src = dogUrl;
+    container.appendChild(image);
+}
 
 function loadDogImages(){
     const dogImageUrl = 'https://dog.ceo/api/breeds/image/random/4'
@@ -18,29 +24,6 @@ function loadDogImages(){
         json.message.forEach(image => addImage(image))
     })
 }
-
-
-function addImage(dogUrl) {
-    const container = document.getElementById('dog-image-container');
-    let image = document.createElement('img');
-    image.src = dogUrl;
-    container.appendChild(image);
-}
-  
-
-function loadDogBreeds(){
-    const breedURL = 'https://dog.ceo/api/breeds/list/all'
-    fetch(breedURL)
-    .then(function(resp){
-        return resp.json()
-    })
-    .then(function(json) {
-        console.log(json.message);
-       breedKeys = Object.keys(json.message);
-       breedKeys.forEach(breed => addDogBreeds(breed))
-    })
-}
-
 
 function addDogBreeds(breed){
     const breedContainer = document.getElementById('dog-breeds')
@@ -59,7 +42,19 @@ function addDogBreeds(breed){
         }
     })
 }
-
+  
+function loadDogBreeds(){
+    const breedURL = 'https://dog.ceo/api/breeds/list/all'
+    fetch(breedURL)
+    .then(function(resp){
+        return resp.json()
+    })
+    .then(function(json) {
+        console.log(json.message);
+       breedKeys = Object.keys(json.message);
+       breedKeys.forEach(breed => addDogBreeds(breed))
+    })
+}
 
 function addListenerToDogs(){
     console.log(breedKeys)
